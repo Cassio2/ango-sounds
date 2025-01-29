@@ -1,5 +1,3 @@
-
-
 :root {
     --primary: #174b7b;
     --secondary: #009970;
@@ -152,744 +150,6 @@
     display: block !important;
   }
   
-  
-  /* dashboard */
-  .bi {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-  }
-  
-  
-  .navbar .form-control {
-    padding: .75rem 1rem;
-  }
-  
-  
-  footer svg {
-    fill: #ffffff;
-    /* Cor desejada */
-    margin-left: 1.5em;
-  }
-  
-  /* BOTÃO FIXO WHATSAP */
-  .fixed-button {
-    position: fixed;
-    bottom: 20px; 
-    right: 20px; 
-    background-color: var(--secondary); 
-    color: #fff; 
-    border: none; 
-    border-radius: 50px; 
-    padding: 8Px 18px; 
-    cursor: pointer; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-  }
-  
-  
-  /* NOSSOS CLIENTES */
-  
-  
-  @-webkit-keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-  
-    100% {
-      transform: translateX(calc(-250px * 7));
-    }
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-  
-    100% {
-      transform: translateX(calc(-250px * 7));
-    }
-  }
-  
-  .slider {
-    /* background: white;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
-    height: 150px;
-  
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* .slider::before,
-  .slider::after {
-    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-  } */
-  
-  .slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-  
-  .slider::before {
-    left: 0;
-    top: 0;
-  }
-  
-  .slider .slide-track {
-    -webkit-animation: scroll 40s linear infinite;
-    animation: scroll 40s linear infinite;
-    display: flex;
-    width: calc(250px * 18);
-  }
-  
-  .slider .slide {
-    width: 2150px;
-     /* background-color: #009970; */
-  
-  }
-  
-   /* .slider .slide img {
-     background-color: #174b7b;
-  }  */
-  
-  /* MSV */
-  .container {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 60em;
-    zoom: 1
-  }
-  
-  .grid-testimonials {
-    overflow: hidden;
-    padding-top: 3.125em
-  }
-  
-  .grid-testimonials li {
-    float: left;
-    list-style-type: none;
-    padding-bottom: 3.125em
-  }
-  
-  .grid-testimonials p {
-    line-height: 1.5em;
-    margin: 0
-  }
-  
-  .grid-testimonials-citation {
-    color: #656262;
-    display: block;
-    font-size: 1.125em;
-    font-weight: 700;
-    margin-top: 2em;
-    text-transform: uppercase;
-    text-align: center
-  }
-  
-  .grid-testimonials li div {
-    border: 10px solid #ebebeb;
-    padding: 2.125em 7.638888888888889%;
-    position: relative
-  }
-  
-  .grid-testimonials .quote-arrow {
-    background: #fff;
-    border-right: 10px solid #ebebeb;
-    border-bottom: 10px solid #ebebeb;
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -32px;
-    left: 50%;
-    margin-left: -25px;
-    width: 40px;
-    height: 40px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-  
-  @media screen and (min-width: 50em) {
-    .grid-testimonials li {
-      margin-right: 5%;
-      width: 30%
-    }
-  
-    .grid-testimonials li:nth-child(3n) {
-      margin-right: 0
-    }
-  }
-  
-  
-  /* SERVICOS */
-  
-  .service-icon {
-    margin: 30px 0;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary);
-    border-radius: 2px;
-    transform: rotate(-45deg);
-  }
-  
-  .service-icon svg {
-    transform: rotate(45deg);
-  }
-  .cardcol{
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
-    width: 100%;                  
-    height: 100%; 
-    transition: transform 0.5s ease;
-    
-  }
-  .cardcol:hover {
-    transform: scale(1.05);  
-  }
-  .cardcol-ti {
-    background-image: url("../../public/ti\ \(2\).jpg");
-          
-  }
-  
-  .cardcol-maritimo {
-    background-image: url("../../public/maritmob.jpg");
-   
-  }.cardcol-civil {
-    background-image: url("../../public/CC.jpg");
-  }
-  
-  .cardcol::before {
-    content: "";  /* Necessário para criar o pseudo-elemento */
-    position: absolute; 
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    height: 100%;  
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1;  
-  }
-  
-  
-  .cardcol .service-text {
-    position: relative; 
-    z-index: 2;  
-  }
-  .cardcol .card-body {
-    position: relative; 
-    z-index: 2; 
-  }
-  
-  
-  .cardcol-ti .text-white {
-    color: white !important;  
-  }
-  
-  
-  
-  /*POR QUE SOMO A SUA ESCOLHA escolha*/
-  
-  .single-promo-card {
-    transition: all .2s ease;
-    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
-  }
-  
-  .card.single-promo-card {
-    border: 1px solid #eff2f7;
-    border-radius: 1rem;
-  }
-  
-  .card.single-promo-card:hover {
-    background: #6730e3;
-    color: #ffffff;
-  }
-  
-  .card.single-promo-card:hover span,
-  .card.single-promo-card:hover h5,
-  .card.single-promo-card:hover p.text-muted {
-    color: #ffffff !important;
-  }
-  
-  .single-promo-card .card-body {
-    padding: 1rem;
-  }
-  
-  .single-promo-hover {
-    transition: all .2s ease-out;
-    will-change: transform;
-  }
-  
-  .single-promo-hover:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1rem 3rem rgba(31, 45, 61, .125) !important;
-  }
-  
-  /*=========================================
-              09. VIDEO PROMO CSS
-  ============================================*/
-  
-  
-  .background {
-    background-image: linear-gradient(to right, rgba(32, 40, 119, 0.95), rgba(55, 46, 149, 0.95), rgba(83, 49, 177, 0.90), rgba(114, 48, 205, 0.85), rgba(150, 41, 230, 0.95));
-  }
-  
-  .video-play-icon {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%;
-    position: relative;
-    z-index: 4;
-    display: inline-block;
-    border: 2px solid #ffffff;
-    cursor: pointer;
-    background: #ffffff;
-  }
-  
-  .video-play-icon span {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 25%;
-    font-size: 23px;
-    left: 2px;
-  }
-  
-  .video-promo-content a.video-play-icon-without-bip:hover span {
-    color: #ffffff;
-  }
-  
-  .video-promo-content a.video-play-icon {
-    border-radius: 50%;
-    display: block;
-    -webkit-animation: ripple-white 1s linear infinite;
-    animation: ripple-white 1s linear infinite;
-    transition: .5s
-  }
-  
-  .video-promo-content a.video-play-icon-without-bip {
-    animation: none;
-  }
-  
-  .video-promo-content a.video-play-icon-without-bip:hover {
-    -webkit-animation: ripple-white 1s linear infinite;
-    animation: ripple-white 1s linear infinite;
-    transition: .5s;
-    background-color: #9629e6;
-  }
-  
-  @-webkit-keyframes ripple-white {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1)
-    }
-  
-    100% {
-      -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0);
-      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0)
-    }
-  }
-  
-  @keyframes ripple-white {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1)
-    }
-  
-    100% {
-      -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0);
-      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 30px rgba(255, 255, 255, 0)
-    }
-  }
-  
-  .ptb-100 {
-    padding: 50px 0;
-  }
-  
-  .download-btn a {
-    padding: 12px 30px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-  }
-  
-  .google-play-btn:hover {
-    background: transparent;
-    color: #ffffff;
-  }
-  
-  .app-store-btn {
-    border-radius: 30px;
-    color: #ffffff;
-    border-color: #ffffff;
-  }
-  
-  .app-store-btn:hover {
-    background: #ffffff;
-    color: #6730e3;
-  }
-  
-  
-  
-  /*--------------------------------------------------------------
-  # Paginas de serviços prestados
-  --------------------------------------------------------------*/
-  .features .features-item {
-    color: color-mix(in srgb, var(--default-color), transparent 20%);
-  }
-  
-  .features .features-item+.features-item {
-    margin-top: 100px;
-  }
-  
-  @media (max-width: 768px) {
-    .features .features-item+.features-item {
-      margin-top: 40px;
-    }
-  }
-  
-  .features .features-item h3 {
-    font-weight: 700;
-    font-size: 26px;
-  }
-  
-  .features .features-item .btn-get-started {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    padding: 8px 30px 10px 30px;
-    border-radius: 4px;
-  }
-  
-  .features .features-item .btn-get-started:hover {
-    background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
-  }
-  
-  .features .features-item ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .features .features-item ul li {
-    padding-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  .features .features-item ul li:last-child {
-    padding-bottom: 0;
-  }
-  
-  .features .features-item ul i {
-    font-size: 20px;
-    padding-right: 4px;
-    color: orange;
-  }
-  
-  .features .features-item img {
-    border: 6px solid var(--primary);
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .features .features-item .features-img-bg {
-    position: relative;
-    min-height: 500px;
-  }
-  
-  @media (max-width: 640px) {
-    .features .features-item .features-img-bg {
-      min-height: 300px;
-    }
-  }
-  
-  .features .features-item .features-img-bg img {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .features .features-item .image-stack {
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(12, 1fr);
-  }
-  
-  .features .features-item .image-stack .stack-back {
-    grid-column: 4/-1;
-    grid-row: 1;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .features .features-item .image-stack .stack-front {
-    grid-row: 1;
-    grid-column: 1/span 8;
-    margin-top: 20%;
-    width: 100%;
-    z-index: 2;
-  }
-  
-  
-  
-  
-  /*--------------------------------------------------------------
-  # Contactos Section
-  --------------------------------------------------------------*/
-  .contact .info-item {
-    background: color-mix(in srgb, var(--default-color), transparent 96%);
-    padding: 30px;
-  }
-  
-  .contact .info-item i {
-    font-size: 38px;
-    line-height: 0;
-    color: var(--accent-color);
-  }
-  
-  .contact .info-item h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 20px 0 10px 0;
-  }
-  
-  .contact .info-item p {
-    padding: 0;
-    line-height: 24px;
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  
-  .contact .email-form {
-    background: color-mix(in srgb, var(--default-color), transparent 96%);
-    padding: 30px;
-    height: 100%;
-  }
-  
-  .contact .email-form input[type=text],
-  .contact .email-form input[type=email],
-  .contact .email-form textarea {
-    font-size: 14px;
-    padding: 10px 15px;
-    box-shadow: none;
-    border-radius: 0;
-    color: var(--default-color);
-    background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-    border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-  }
-  
-  .contact .email-form input[type=text]:focus,
-  .contact .email-form input[type=email]:focus,
-  .contact .email-form textarea:focus {
-    border-color: var(--secondary);
-  }
-  
-  
-  
-  
-  
-  /*--------------------------------------------------------------
-  # Carteira de projectos
-  --------------------------------------------------------------*/
-  .projectos {
-    --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
-  }
-  
-  .projectos .projecto-item {
-    background-color: var(--surface-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-    height: 100%;
-    padding: 30px;
-    transition: 0.3s;
-    border-radius: 10px;
-    display: flex;
-  }
-  
-  .projectos .projecto-item .icon {
-    font-size: 32px;
-    border-radius: 10px;
-    position: relative;
-    margin-right: 25px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 72px;
-    height: 72px;
-    flex-shrink: 0;
-  }
-  
-  .projectos .projecto-item h3 {
-    color: color-mix(in srgb, var(--heading-color), transparent 25%);
-    font-weight: 700;
-    font-size: 22px;
-    transition: 0.3s;
-  }
-  
-  .projectos .projecto-item p {
-    margin-bottom: 0;
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
-    transition: 0.3s;
-  }
-  
-  .projectos .projecto-item .read-more {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 10px;
-    transition: 0.3s;
-    font-size: 14px;
-  }
-  
-  .projectos .projecto-item .read-more i {
-    margin-left: 10px;
-  }
-  
-  .projectos .projecto-item.item-cyan .icon {
-    color: #0dcaf0;
-    border: 1px solid #0dcaf0;
-    background: rgba(13, 202, 240, 0.1);
-  }
-  
-  .projectos .projecto-item.item-orange .icon {
-    color: #fd7e14;
-    border: 1px solid #fd7e14;
-    background: rgba(253, 126, 20, 0.1);
-  }
-  
-  .projectos .projecto-item.item-teal .icon {
-    color: #20c997;
-    border: 1px solid #20c997;
-    background: rgba(32, 201, 151, 0.1);
-  }
-  
-  .projectos .projecto-item.item-red .icon {
-    color: #df1529;
-    border: 1px solid #df1529;
-    background: rgba(223, 21, 4, 0.1);
-  }
-  
-  .projectos .projecto-item.item-indigo .icon {
-    color: #6610f2;
-    border: 1px solid #6610f2;
-    background: rgba(102, 16, 242, 0.1);
-  }
-  
-  .projectos .projecto-item.item-pink .icon {
-    color: #f3268c;
-    border: 1px solid #f3268c;
-    background: rgba(243, 38, 140, 0.1);
-  }
-  
-  .projectos .projecto-item:hover {
-    box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
-  }
-  
-  .projectos .projecto-item:hover h3 {
-    color: var(--heading-color);
-  }
-  
-  .projectos .projecto-item:hover p {
-    color: color-mix(in srgb, var(--default-color), transparent 10%);
-  }
-  
-  /* SVG */
-  .a{
-    stroke:#000000;
-    
-  }
-  
-  
-  
-  /* EQUIPE */
-  
-  .testimonial-card .card-up {
-    height: 120px;
-    overflow: hidden;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-  }
-  .testimonial-card .avatar {
-    width: 110px;
-    margin-top: -60px;
-    overflow: hidden;
-    border: 3px solid #fff;
-    border-radius: 50%;
-  }
-  
-  
-  /* CONTADOR DE DADOS */
-  .counter {
-    transition: all 0.5s ease-out;
-  }
-  
-  
-  /* ANIMAÇ baixo sima */
-  
-  /* Estilo inicial dos elementos */
-  .animate {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: all 1.5s ease-out;
-  }
-  
-  /* Quando o elemento estiver visível */
-  .animate.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* ANIMAÇ baixo sima */
-  
-  /* Estilo inicial dos elementos */
-  .animateLado {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 1.5s ease-out;
-  }
-  
-  /* Quando o elemento estiver visível */
-  .animateLado.show {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  /* BTN WHATSAP */
-  
-  .btnwhatsapp{
-    border: none;
-    background-color: transparent;
-  }
-  
-  
-  /* Logo Parceiros */
-  @media (max-width: 768px) {
-    .logoParcero {
-        max-width: 30%;
-    }
-    .contactoLibolo{
-      font-size: 0.8rem;
-    }
-  }
-  
-  
-  
-  .text-j{
-    text-align: justify;
-    word-spacing: -0.1em;
-    hyphens: auto; /* Hifenização automática */
-  }
-
-
 
   .height-50vh {
     height: 50vh;
@@ -902,3 +162,224 @@
         object-fit: cover; /* A imagem irá cobrir todo o contêiner  object-fit: cover; ou object-fit: contain;*/
       
   }
+
+
+/* Observando linda */
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
+.card,
+.content,
+.h2a {
+	overflow: hidden;
+}
+.h2a {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background: black; */
+}
+.card,
+.container-1 {
+	display: flex;
+	align-items: center;
+}
+.card {
+	width: 1280px;
+	height: 720px;
+	margin: 0;
+	justify-content: center;
+}
+.container-full,
+.content {
+	width: 1000px;
+	height: 562px;
+}
+.backgroundImage {
+	position: absolute;
+	width: 1000px;
+}
+.boyImage {
+	position: absolute;
+	width: 1000px;
+	z-index: 2;
+	animation: 200s linear infinite blur;
+}
+.content {
+	border-radius: 40px;
+	animation: 200s linear infinite brightness;
+}
+.container-1 {
+	justify-content: center;
+}
+.container-full,
+.face {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+.container-full {
+	margin: 0;
+	justify-content: center;
+	transform: scale(1);
+	animation: 200s linear infinite zoom-in;
+}
+.cube,
+.face {
+	width: 870px;
+	height: 190px;
+}
+.cube {
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 480px;
+	transform-style: preserve-3d;
+	perspective-origin: 51% 70%;
+}
+.face,
+.hue {
+	position: absolute;
+}
+.face {
+	background: 0 0;
+	border: 0 solid #000;
+	opacity: 0.5;
+}
+.bottom,
+.top {
+	width: 870px;
+	height: 870px;
+}
+p {
+	white-space: nowrap;
+	overflow: hidden;
+	font-family: "Bebas Neue", sans-serif;
+	font-weight: 400;
+	font-size: calc(6em + (190px / 10) * 0.7);
+	padding-top: 20px;
+	color: #fff;
+}
+span {
+	color: red;
+}
+.front {
+	transform: translateZ(435px);
+	display: none;
+}
+.back {
+	transform: translateZ(-435px) rotateY(180deg) scaleX(-1);
+}
+.left {
+	transform: translateX(-435px) rotateY(-90deg) scaleX(-1);
+}
+.right {
+	transform: translateX(435px) rotateY(90deg) scaleX(-1);
+}
+.top {
+	transform: translateY(-435px) rotateX(90deg) scaleY(-1);
+}
+.bottom {
+	transform: translateY(-245px) rotateX(-90deg) scaleY(-1);
+}
+.left p {
+	margin-left: 480px;
+	animation: 200s linear infinite left;
+}
+.back p {
+	margin-left: -390px;
+	animation: 200s linear infinite back;
+}
+.right p {
+	margin-left: -1260px;
+	animation: 200s linear infinite right;
+}
+@keyframes left {
+	100% {
+		margin-left: -54000px;
+	}
+}
+@keyframes back {
+	100% {
+		margin-left: -54870px;
+	}
+}
+@keyframes right {
+	100% {
+		margin-left: -55740px;
+	}
+}
+.hue {
+	top: 0;
+	left: 0;
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: overlay;
+	background: #1e5799;
+	background: radial-gradient(ellipse at center, #1e5799 0, #7db9e8 100%);
+	opacity: 1;
+}
+.hue.animated {
+	-webkit-animation: 8s infinite filter-animation;
+	animation: 8s infinite filter-animation;
+}
+.container-reflect {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 380px;
+	filter: blur(10px);
+}
+.container-reflect .cube {
+	perspective-origin: 51% -30%;
+}
+.container-reflect .back {
+	transform: translateZ(-435px) rotateY(180deg) scaleX(-1) scaleY(-1);
+}
+.container-reflect .left {
+	transform: translateX(-435px) rotateY(-90deg) scaleX(-1) scaleY(-1);
+}
+.container-reflect .right {
+	transform: translateX(435px) rotateY(90deg) scaleX(-1) scaleY(-1);
+}
+
+.container-reflect p {
+	transform: scaleY(70%);
+}
+
+@keyframes filter-animation {
+	0%,
+	100% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(100deg);
+	}
+}
+@keyframes zoom-in {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(2.5);
+	}
+}
+@keyframes blur {
+	0% {
+		filter: blur(0px);
+	}
+	100% {
+		filter: blur(3px);
+	}
+}
+@keyframes brightness {
+	0% {
+		filter: brightness(1) contrast(1);
+	}
+	100% {
+		filter: brightness(0.8) contrast(1.3);
+	}
+}
