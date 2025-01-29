@@ -1,16 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>  <!-- O título pode ser dinâmico -->
+    <title>{{title}}</title> <!-- O título pode ser dinâmico -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
 
 </head>
-<body>
-   
-        {{{body}}} <!-- O conteúdo da página será injetado aqui -->
 
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<body>
+    <!-- START NAVR BAR -->
+    <div>
+        <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbarHome" aria-label="Dark offcanvas navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto img-nav" href="/">
+                    <h1 class="m-0"><i> <img src="#" alt="logo" /></i>
+                    </h1>
+                </a>
+
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex=-1 id="offcanvasNavbarDark"
+                    aria-labelledby="offcanvasNavbarDarkLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">
+                            <img src="public/logo.png" alt="logo" />
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item navborder ${borderVisible ? '' : 'no-border'">
+                                <a class="linkBorder nav-link mx-lg-2 bb" style="color: #ffffff" aria-current="page"
+                                    href="#hero">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown navborder ${borderVisible ? '' : 'no-border'}`}">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="color: #ffffff">Sobre</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="sobre-nos.html#sobreNos">Sobre nós</a></li>
+                                    <li><a class="dropdown-item" href="galeria.html#galeria">Galeria</a></li>
+                                    <li><a class="dropdown-item" href="">Portfolio</a></li>
+                                </ul>
+                            </li>
+
+                            {{!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Serviços </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ti.html#ti">TI</a></li>
+                                    <li><a class="dropdown-item" href="maritimo.html#maritimo">Serviços Marítimos</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="construcao-civil.html#civil">Construção Civil</a>
+                                    </li>
+                                </ul>
+                            </li> --}}
+
+
+                            <li class="nav-item navborder $borderVisible ? '' : 'no-border'">
+                                <a class="linkBorder nav-link mx-lg-2" style="color: #ffffff"
+                                    href="#projectos">Distribuição</a>
+                            </li>
+
+                            <li class="nav-item navborder $borderVisible ? '' : 'no-border'">
+                                <a class="linkBorder nav-link mx-lg-2" style="color: #ffffff"
+                                    href="contactos.html#contactos">Precificação</a>
+                            </li>
+
+                            <li class="nav-item navborder $borderVisible ? '' : 'no-border'">
+                                <a class="linkBorder nav-link mx-lg-2" style="color: #ffffff"
+                                    href="contactos.html#contactos">Blogue</a>
+                            </li>
+
+                            <li class="nav-item navborder $borderVisible ? '' : 'no-border'">
+                                <a class="linkBorder nav-link mx-lg-2" style="color: #ffffff"
+                                    href="contactos.html#contactos">Iniciar sessão</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <a href="#" class="login-buttom">Começar</a>
+
+                <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    {{{body}}} <!-- O conteúdo da página será injetado aqui -->
+
+    <script>
+        // MUDAR A COR DO NAVBAR COM O SCROLL
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbarHome");
+            if (window.scrollY > 50) { // Alterar a cor após rolar 50px
+                navbar.style.backgroundColor = "#091E3E"; // Cor desejada com opacidade
+            } else {
+                navbar.style.backgroundColor = "transparent"; // Cor padrão
+            }
+        });
+
+    </script>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
