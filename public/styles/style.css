@@ -404,3 +404,267 @@
   font-size: 12px
 
 }
+
+
+
+
+/* MUSIC AUDIO */
+
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+/* --------------------------- Colors ------------------------- */
+/* ---------------------- Width & Heights --------------------- */
+/* --------------------------- Mixins -------------------------- */
+/* ------------------------ Reset CSS ----------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 200, "opsz" 48;
+  font-size: 30px;
+  color: #0066b2;
+}
+
+.player-controls__play .material-symbols-rounded {
+  font-size: 40px;
+}
+
+/* --------------------------- CSS -------------------------- */
+.MusicAudio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.cardMusic {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  border: 1px solid #0066b2;
+  border-radius: 150px;
+  background: radial-gradient(circle at 18.7% 37.8%, #fafafa 0%, #bce5f7 90%);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+}
+
+.song {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Alkatra", cursive;
+}
+.song__title {
+  font-size: 26px;
+  color: #0066b2;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.song__artist {
+  font-size: 16px;
+  color: #28282b;
+}
+
+.song-duration {
+  display: flex;
+  gap: 2px;
+  font-family: "Alkatra", cursive;
+  font-size: 12px;
+  color: #71797e;
+}
+.song-duration__lapsed, .song-duration__total {
+  display: inline-block;
+}
+
+.disc {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, white 0px, white 10px, #28282b 10px, #28282b 12px, transparent 12px, transparent 20px, #cf1020 20px, #cf1020 24px, transparent 24px, transparent 44px, #28282b 44px, #28282b 54px, #353935 54px, #353935 64px, rgba(0, 0, 0, 0.3) 64px, rgba(0, 0, 0, 0.3) 94px, #71797e 94px, #71797e 95px, #28282b 95px), repeating-linear-gradient(45deg, #e41c38 0px, #e41c38 2px, #ff3800 2px, #ff3800 4px);
+}
+.disc_play {
+  animation: rotate-disc 3s linear 0s infinite forwards;
+}
+
+.disc-arm {
+  position: absolute;
+  top: 35%;
+  right: 22%;
+  height: 140px;
+  width: 10px;
+  background: black;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.5);
+  transform-origin: top left;
+  transition: all 0.4s ease-in-out;
+}
+.disc-arm::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -100%;
+  width: 30px;
+  height: 50px;
+  border-radius: 35%;
+  background-image: linear-gradient(120deg, #71797e 20%, #4d4d4d 60%);
+}
+.disc-arm_play {
+  transform: rotate(25deg);
+  animation: wiggle 500ms infinite linear;
+}
+
+.speakers {
+  position: absolute;
+  top: 45%;
+}
+.speakers_right {
+  right: 10%;
+}
+.speakers_left {
+  left: 10%;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 50%;
+}
+.player-controls .audio {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.player-controls__prev, .player-controls__play, .player-controls__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 50%, #bce5f7 51%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #0066b2;
+  transition: all 0.2s ease-in-out;
+}
+.player-controls__prev:hover, .player-controls__play:hover, .player-controls__next:hover {
+  box-shadow: 0 0 0 1px #0066b2;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.player-controls__play {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.player-controls__play .wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  background: #0066b2;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: animate-wave 0.6s linear infinite;
+  pointer-events: none;
+}
+
+.music-notes {
+  position: absolute;
+  font-size: 40px;
+  color: #0066b2;
+  opacity: 0;
+}
+.music-notes_one {
+  top: -20%;
+  animation-delay: 0.4s;
+}
+.music-notes_two {
+  bottom: -20%;
+  left: -10%;
+  animation-delay: 1s;
+}
+.music-notes_three {
+  top: 30%;
+  left: -10%;
+  animation-delay: 1.5s;
+}
+.music-notes_four {
+  bottom: -30%;
+  animation-delay: 0.8s;
+}
+.music-notes_five {
+  bottom: -5%;
+  right: -10%;
+  animation-delay: 1.2s;
+}
+.music-notes_six {
+  top: 10%;
+  right: -10%;
+  animation-delay: 0.2s;
+}
+.music-notes_play {
+  opacity: 1;
+  animation: musical-notes-playing 4s infinite linear;
+}
+
+@keyframes animate-wave {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.3;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
+@keyframes rotate-disc {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes musical-notes-playing {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.5) translate(100%, -100%);
+  }
+  100% {
+    transform: scale(1.5) translate(100%, -100%);
+    opacity: 0;
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: translateY(-1px) rotate(25deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(26deg);
+  }
+  100% {
+    transform: translateY(-1px) rotate(25deg);
+  }
+}

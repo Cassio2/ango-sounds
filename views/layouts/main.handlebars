@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><link rel="stylesheet" href="./style.css">
+
 
 
 </head>
@@ -205,6 +207,151 @@ Nosso serviço permite que sua música esteja disponível em
         }
         window.addEventListener("load", adjustContentSize);
         window.addEventListener("resize", adjustContentSize);
+
+
+// MUSIC AUDIO 
+/* ------------------------- Helper Functions ------------------------- */
+const getDomElement = (baseElement = document, cssSelector = "") =>
+baseElement.querySelector(cssSelector);
+
+const convertSecsToMins = secs => {
+  return (secs / 60).toFixed(2);
+};
+
+/* ------------------------------ Songs Data ---------------------------- */
+const songs = [
+{
+  title: "Musica e vida",
+  artist: "João Miguel",
+  url:
+  "https://raw.githubusercontent.com/5hraddha/misc/master/images/songs/take-me-home.mp3" },
+
+{
+  title: "Eu estarei lá para você",
+  artist: "The Rembrandts",
+  url:
+  "https://raw.githubusercontent.com/5hraddha/misc/master/images/songs/i-will-be-there-for-you.mp3" },
+
+{
+  title: "Conte Comigo",
+  artist: "Bruno Mars",
+  url:
+  "https://raw.githubusercontent.com/5hraddha/misc/master/images/songs/count-on-me.mp3" },
+
+{
+  title: "Feliz",
+  artist: "Pharrell Williams",
+  url:
+  "https://raw.githubusercontent.com/5hraddha/misc/master/images/songs/happy.mp3" }];
+
+
+
+/* ------------------------- Select DOM Elements ------------------------- */
+const musicPlayer = getDomElement(document, ".cardMusic");
+const musicalNotes = musicPlayer.querySelectorAll(".music-notes");
+const playerDisc = getDomElement(musicPlayer, ".disc");
+const playerDiscArm = getDomElement(musicPlayer, ".disc-arm");
+const playBtn = getDomElement(musicPlayer, ".player-controls__play");
+const playBtnIcon = getDomElement(playBtn, ".material-symbols-rounded");
+const playBtnWaveAnimation = getDomElement(playBtn, ".js-wave");
+const previousBtn = getDomElement(musicPlayer, ".player-controls__prev");
+const nextBtn = getDomElement(musicPlayer, ".player-controls__next");
+const audioElement = getDomElement(musicPlayer, ".audio");
+const songTitle = getDomElement(musicPlayer, ".song__title");
+const songArtist = getDomElement(musicPlayer, ".song__artist");
+const songDurationLapsed = getDomElement(musicPlayer, ".song-duration__lapsed");
+const songDurationTotal = getDomElement(musicPlayer, ".song-duration__total");
+
+// Current song index
+let currentSongIndex = 0;
+
+// Load song once the music player is loaded
+const loadSong = song => {
+  songTitle.textContent = song.title;
+  songArtist.textContent = song.artist;
+  audioElement.src = song.url;
+};
+
+// Play a song
+const playSong = (playBtn, audioElement) => {
+  playBtn.classList.add("js-play");
+  playBtnWaveAnimation.classList.add("wave");
+  playerDisc.classList.add("disc_play");
+  playerDiscArm.classList.add("disc-arm_play");
+  musicalNotes.forEach(note => note.classList.add("music-notes_play"));
+  playBtnIcon.textContent = "pause";
+  setTimeout("audioElement.play()", 500);
+};
+
+// Pause a song
+const pauseSong = (playBtn, audioElement) => {
+  playBtn.classList.remove("js-play");
+  playBtnWaveAnimation.classList.remove("wave");
+  playerDisc.classList.remove("disc_play");
+  playerDiscArm.classList.remove("disc-arm_play");
+  musicalNotes.forEach(note => note.classList.remove("music-notes_play"));
+  playBtnIcon.textContent = "play_arrow";
+  audioElement.pause();
+};
+
+// Get song's total duration after the it's metadata is loaded
+const handleLoadedAudioMetadata = (event, songTotalDurationElement) => {
+  const songDurationInSecs = event.target.duration;
+  songTotalDurationElement.textContent = convertSecsToMins(songDurationInSecs);
+};
+
+// Play or pause the song whenever the play button is clicked
+const handlePlayButton = (playBtn, audioElement) => {
+  const isSongPlaying = playBtn.classList.contains("js-play");
+  isSongPlaying ?
+  pauseSong(playBtn, audioElement) :
+  playSong(playBtn, audioElement);
+};
+
+// Go to the previous song whenever the previous button is clicked
+const handlePreviousBtn = () => {
+  currentSongIndex--;
+  if (currentSongIndex < 0) {
+    currentSongIndex = songs.length - 1;
+  }
+  loadSong(songs[currentSongIndex]);
+  playSong(playBtn, audioElement);
+};
+
+// Go to the next song whenever the previous button is clicked
+const handleNextBtn = () => {
+  currentSongIndex++;
+  if (currentSongIndex == songs.length) {
+    currentSongIndex = 0;
+  }
+  loadSong(songs[currentSongIndex]);
+  playSong(playBtn, audioElement);
+};
+
+// Play the next song when the current song has ended
+const handleCurrentSongEnded = () => handleNextBtn();
+
+// Update the current song duration when the song is playing
+const handleUpdateProgress = (event, songLapsedDurationElement) => {
+  const { currentTime, duration } = event.target;
+  songLapsedDurationElement.textContent = convertSecsToMins(currentTime);
+};
+
+// Add Event Listeners
+playBtn.addEventListener("click", () =>
+handlePlayButton(playBtn, audioElement));
+
+previousBtn.addEventListener("click", handlePreviousBtn);
+nextBtn.addEventListener("click", handleNextBtn);
+audioElement.addEventListener("timeupdate", event => {
+  handleUpdateProgress(event, songDurationLapsed);
+});
+audioElement.addEventListener("ended", handleCurrentSongEnded);
+audioElement.onloadedmetadata = (event) =>
+handleLoadedAudioMetadata(event, songDurationTotal);
+
+// Load song
+loadSong(songs[currentSongIndex]);
 
 
     </script>
