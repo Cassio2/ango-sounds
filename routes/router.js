@@ -10,4 +10,9 @@ router.get('/sobre',(req,res)=>{
     res.render('sobre',{title:'Home'});
 } );
 
+router.get('/contato',(req,res)=>{
+    res.render('contato',{title:'Home'});
+}
+);
+
 module.exports=router;
