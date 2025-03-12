@@ -20,4 +20,9 @@ router.get('/produtos',(req,res)=>{
 }   
 );
 
+router.get('/servicos',(req,res)=>{
+    res.render('servicos',{title:'Nossos Serviços'});
+}
+);
+
 module.exports=router;
