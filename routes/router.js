@@ -15,4 +15,9 @@ router.get('/contato',(req,res)=>{
 }
 );
 
+router.get('/produtos',(req,res)=>{
+    res.render('produtos',{title:'Home'});
+}   
+);
+
 module.exports=router;
